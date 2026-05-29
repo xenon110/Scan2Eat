@@ -293,6 +293,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
   // ── Today's Overview Card ─────────────────────────────────────────────────
 
+  // ignore: unused_element
   Widget _buildTodayOverview(NutrientTotals t) {
     final score = _healthScore;
     final calProgress = (t.calories / _calGoal).clamp(0.0, 1.0);
@@ -483,6 +484,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
   // ── Macro Bars ────────────────────────────────────────────────────────────
 
+  // ignore: unused_element
   Widget _buildMacroBars(NutrientTotals t) {
     final g = UserGoals.instance.daily.total;
     // All nutrients — auto-populated from every scanned & consumed food
@@ -976,6 +978,7 @@ class _HomeScreenState extends State<HomeScreen> with SingleTickerProviderStateM
 
   // ── Food Log Row ──────────────────────────────────────────────────────────
 
+  // ignore: unused_element
   Widget _buildFoodLogRow() {
     final entries = _todayEntries.reversed.take(4).toList();
     return SizedBox(

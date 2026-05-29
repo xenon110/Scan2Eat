@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
-import 'dart:math' as math;
 import '../../core/app_theme.dart';
 import '../../core/nutrition_log.dart';
 import '../../core/ai_service.dart';
