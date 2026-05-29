@@ -55,7 +55,7 @@ class _NutritionReportScreenState extends State<NutritionReportScreen>
   }
 
   String get _periodLabel => ['Today', 'This Week', 'This Month'][_tab.index];
-  int get _periodDays => [1, 7, 30][_tab.index];
+  // int get _periodDays => [1, 7, 30][_tab.index];
 
   @override
   Widget build(BuildContext context) {

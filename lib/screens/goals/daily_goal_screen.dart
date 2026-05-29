@@ -68,8 +68,11 @@ class _DailyGoalScreenState extends State<DailyGoalScreen>
     setState(() {
       if (_periodIndex == 0) {
         _morning = g;
-      } else if (_periodIndex == 1) _afternoon = g;
-      else _evening = g;
+      } else if (_periodIndex == 1) {
+        _afternoon = g;
+      } else {
+        _evening = g;
+      }
     });
   }
 

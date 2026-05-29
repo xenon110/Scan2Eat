@@ -121,7 +121,7 @@ class _AnalysisScreenState extends State<AnalysisScreen>
           onPressed: () {
             NutritionLog.instance.add(FoodEntry(
               name: widget.result.name,
-              imageUrl: 'https://image.pollinations.ai/prompt/${Uri.encodeComponent(widget.result.name + ' food')}?width=400&height=300&nologo=true',
+              imageUrl: 'https://image.pollinations.ai/prompt/${Uri.encodeComponent('${widget.result.name} food')}?width=400&height=300&nologo=true',
               consumedAt: DateTime.now(),
               healthScore: widget.result.healthScore,
               calories: widget.result.calories,
@@ -871,45 +871,5 @@ class _AnalysisScreenState extends State<AnalysisScreen>
   // _onConsumed logic is now in PostScanActionScreen
 }
 
-// ─── Custom Ring Painter ──────────────────────────────────────────────────────
 
-class _RingPainter extends CustomPainter {
-  final double progress;
-  final Color color;
-  final Color bg;
 
-  _RingPainter({required this.progress, required this.color, required this.bg});
-
-  @override
-  void paint(Canvas canvas, Size size) {
-    const strokeWidth = 9.0;
-    final center = Offset(size.width / 2, size.height / 2);
-    final radius = math.min(size.width, size.height) / 2 - strokeWidth / 2;
-
-    final bgPaint = Paint()
-      ..color = bg
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = strokeWidth
-      ..strokeCap = StrokeCap.round;
-
-    final fgPaint = Paint()
-      ..color = color
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = strokeWidth
-      ..strokeCap = StrokeCap.round;
-
-    const start = -math.pi / 2;
-    canvas.drawCircle(center, radius, bgPaint);
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: radius),
-      start,
-      2 * math.pi * progress,
-      false,
-      fgPaint,
-    );
-  }
-
-  @override
-  bool shouldRepaint(covariant _RingPainter old) =>
-      old.progress != progress || old.color != color;
-}

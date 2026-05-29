@@ -21,7 +21,7 @@ class PostScanActionScreen extends StatelessWidget {
   void _onConsumed(BuildContext context) {
     NutritionLog.instance.add(FoodEntry(
       name: result.name,
-      imageUrl: 'https://image.pollinations.ai/prompt/${Uri.encodeComponent(result.name + ' food')}?width=400&height=300&nologo=true',
+      imageUrl: 'https://image.pollinations.ai/prompt/${Uri.encodeComponent('${result.name} food')}?width=400&height=300&nologo=true',
       consumedAt: DateTime.now(),
       healthScore: result.healthScore,
       calories: result.calories,

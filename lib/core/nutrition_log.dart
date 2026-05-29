@@ -193,6 +193,7 @@ class NutritionLog extends ChangeNotifier {
     final path = '${directory.path}/nutrition_log.csv';
     final file = File(path);
     await file.writeAsString(csvData);
+    // ignore: deprecated_member_use
     await Share.shareXFiles([XFile(path)], text: 'Here is my exported Nutrition Log from Scan2Eat!');
   }
 
@@ -222,13 +223,13 @@ class NutritionLog extends ChangeNotifier {
   }
 
   // Aggregate helpers
-  _Totals totalsFor(List<FoodEntry> entries) {
-    if (entries.isEmpty) return _Totals.zero();
-    return entries.fold(_Totals.zero(), (acc, e) => acc.add(e));
+  NutrientTotals totalsFor(List<FoodEntry> entries) {
+    if (entries.isEmpty) return NutrientTotals.zero();
+    return entries.fold(NutrientTotals.zero(), (acc, e) => acc.add(e));
   }
 }
 
-class _Totals {
+class NutrientTotals {
   final double calories;
   final double protein;
   final double carbs;
@@ -240,7 +241,7 @@ class _Totals {
   final double iron;
   final double calcium;
 
-  const _Totals({
+  const NutrientTotals({
     required this.calories,
     required this.protein,
     required this.carbs,
@@ -253,12 +254,12 @@ class _Totals {
     required this.calcium,
   });
 
-  factory _Totals.zero() => const _Totals(
+  factory NutrientTotals.zero() => const NutrientTotals(
     calories: 0, protein: 0, carbs: 0, sugar: 0,
     fat: 0, fiber: 0, sodium: 0, vitaminD: 0, iron: 0, calcium: 0,
   );
 
-  _Totals add(FoodEntry e) => _Totals(
+  NutrientTotals add(FoodEntry e) => NutrientTotals(
     calories:  calories  + e.calories,
     protein:   protein   + e.protein,
     carbs:     carbs     + e.carbs,
@@ -273,4 +274,4 @@ class _Totals {
 }
 
 // Public alias used by the report screen
-typedef NutrientTotals = _Totals;
+// typedef NutrientTotals = _Totals;

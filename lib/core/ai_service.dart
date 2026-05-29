@@ -1,4 +1,3 @@
-import 'dart:io';
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
@@ -349,7 +348,7 @@ Return ONLY the raw JSON array. Do not include markdown blocks or any conversati
               userAvatar: 'https://i.pravatar.cc/150?img=$avatarSeed',
               timeAgo: map['timeAgo']?.toString() ?? 'Just now',
               foodName: map['foodName']?.toString() ?? 'Healthy Meal',
-              foodImage: 'https://image.pollinations.ai/prompt/${Uri.encodeComponent(foodQuery + ' food plate')}?width=400&height=300&nologo=true',
+              foodImage: 'https://image.pollinations.ai/prompt/${Uri.encodeComponent('$foodQuery food plate')}?width=400&height=300&nologo=true',
               healthScore: (map['healthScore'] as num?)?.toInt() ?? 85,
               calories: (map['calories'] as num?)?.toInt() ?? 300,
               protein: (map['protein'] as num?)?.toInt() ?? 15,
@@ -398,7 +397,7 @@ Return ONLY the raw JSON array. Do not include markdown blocks or any conversati
             
             return SmartRecipe(
               name: map['name']?.toString() ?? 'Healthy Meal',
-              foodImageQuery: 'https://image.pollinations.ai/prompt/${Uri.encodeComponent(foodQuery + ' recipe meal')}?width=400&height=300&nologo=true',
+              foodImageQuery: 'https://image.pollinations.ai/prompt/${Uri.encodeComponent('$foodQuery recipe meal')}?width=400&height=300&nologo=true',
               healthScore: (map['healthScore'] as num?)?.toInt() ?? 85,
               calories: (map['calories'] as num?)?.toDouble() ?? 300,
               protein: (map['protein'] as num?)?.toDouble() ?? 15,
