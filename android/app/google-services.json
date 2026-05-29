@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "24067715072",
+    "project_id": "vitalis-ai-d7e96",
+    "storage_bucket": "vitalis-ai-d7e96.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:24067715072:android:400ffe0e7d1d9bb33c68e5",
+        "android_client_info": {
+          "package_name": "com.example.foodscanner.food_scanner"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "24067715072-fct832vfn3gca8bseo32lij0p9gg73vk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqDmsS1jBkw5Y4qqq7Clx11qX6D5ofGzI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "24067715072-fct832vfn3gca8bseo32lij0p9gg73vk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "24067715072-2utd51q6vvdm2uq9ga291dtg22rds8f3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.foodscanner.foodScanner"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
